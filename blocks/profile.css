@@ -23,7 +23,7 @@
 }
 
 
-.profile__info__title{
+.profile__info-title{
     display: flex;
     align-items: center;
     margin-bottom:16px;
@@ -31,7 +31,7 @@
     
 }
 
-.profile__info__name{
+.profile__info-name{
     margin: 0;
     
     font-family: Inter;
@@ -43,7 +43,7 @@
 
   
 }
-.profile__info__button{
+.profile__info-button{
     height: 24px;
     width: 24px;
     background-color:#000000 ;
@@ -51,7 +51,7 @@
     
 } 
 
-.profile__info__button:hover{
+.profile__info-button:hover{
     opacity: 60%;
     cursor: pointer;
 }
@@ -71,7 +71,7 @@
     cursor: pointer;
 }
 
-.profile__info_subtitle{
+.profile__info-subtitle{
     margin: 0;
     font-size: 18px;
 }
@@ -91,15 +91,15 @@
         width: auto;
         
     }
-    .profile__info__title{
+    .profile__info-title{
         gap:10px;
 
     }
-    .profile__info__name{
+    .profile__info-name{
         font-size: 22px;
         
     }
-    .profile__info_subtitle{
+    .profile__info-subtitle{
         font-size: 14px;
     }
     .profile__addButton{

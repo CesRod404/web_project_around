@@ -40,7 +40,7 @@
 
 
 
-.element__container__like{
+.element__container-like{
     background-color: transparent;
     border: none;
     margin-right: 15px;
@@ -48,7 +48,7 @@
 
 
 
-.element__container__like__img:hover{
+.element__container-like-img:hover{
     opacity: 50%;
     cursor: pointer;
 }

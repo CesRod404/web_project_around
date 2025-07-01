@@ -47,7 +47,7 @@
     
 }
 
-.modal__forms input{
+.modal__form-input{
     font-size: 14px;
     font-weight: 400px;
     width:358px;
@@ -59,7 +59,7 @@
 
 
 
-.modal__button__close{
+.modal__button-close{
     position: relative;
     background-color: transparent;
     margin: 0;
@@ -73,12 +73,12 @@
     
 }
 
-.modal__button__close:hover{
+.modal__button-close:hover{
     opacity: 50%;
 
 }
 
-.modal__button__close__icon:hover{
+.modal__button-close-icon:hover{
     cursor: pointer;
 }
 
@@ -90,6 +90,7 @@
     background-color: #FFFFFF;
     border: 1px solid;
     opacity: 80%;
+
 }
 
 .modal__button__activo{
