@@ -22,9 +22,11 @@ function cambiarColor(){
    
     if(nombre.value.trim() !=="" && acerca.value.trim() !==""){
         botonGuardar.classList.add('modal__button__activo')
+        botonGuardar.disabled= false;
     }else{
-        botonGuardar.classList.remove('modal__button__activo')
-        botonGuardar.setAttribute("disabled", true)
+        botonGuardar.classList.remove('modal__button__activo');
+        botonGuardar.disabled=true;
+        
     }
 }
 
