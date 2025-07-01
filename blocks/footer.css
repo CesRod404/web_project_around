@@ -1,0 +1,11 @@
+
+.footer{
+    align-self: flex-start;
+}
+
+.footer__text{
+    color: #545454 ;
+    margin: 67px 0 60px;
+ 
+
+}

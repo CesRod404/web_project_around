@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pagina Interactiva Alrededor de los EE.UU " />
+    <meta name="author" content="Cesar Rodriguez" />
+    <meta name="keywords" content="HTML, CSS, JS" />
+
+    <link rel="stylesheet" href="pages/index.css">
+    <title>Project Around</title>
+</head>
+
+<body>
+
+    <div class="page">
+        <header class="header">
+            <img src="./images/Vector.svg" alt="Logo de Around the U.S." class="header__logo">
+        </header>
+        <hr>
+        <main class="content">
+            <section class="profile">
+                <img src="./images/avatar.jpg" alt="" class="profile__avatar">
+                <div class="profile__info">
+                    <div class="profile__info__title">
+                        <h1 class="profile__info__name">
+                            Jacques Cousteau
+                        </h1>
+                        <button  class="profile__info__button">
+                            <img src="./images/BotonEditar.svg" alt="Lapiz de edición">
+                        </button>
+                    </div>
+                    <p class="profile__info_subtitle">
+                        Explorador
+                    </p>
+                </div>
+            <button class="profile__addButton">
+                <img src="./images/BotonAñadir.svg" alt="Boton para añadir">
+            </button>
+            </section>
+            <section class="elements">
+                <div class="element">
+                    <img src="./images/ValleYosemite.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Valle de Yosemite</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img src="./images/LagoLouise.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Lago Louise</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img src="./images/MontañasCalvas.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Montañas Calvas</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img src="./images/Latemar.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Latemar</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img src="./images/VanoisNational.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Vanois National...</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img src="./images/LagodiBraires.png" alt="" class="element__image">
+                    <div class="element__container">
+                        <p>Lago di Braires</p>
+                        <button class="element__container__like">
+                            <img src="./images/MeGusta.svg" alt="Bóton de me gusta" class="element__container__like__img">
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p class="footer__text">
+                    &#169; 2024 Around The U.S.
+                </p>
+            </footer>
+        </main>
+      
+        <div class="modal">
+            <div class="modal__form">
+                <button class="modal__button__close">
+                    <img src="./images/Close Icon.svg" alt="Botón de cerrar" class="modal__button__close__icon">
+                </button>
+                <h2>Editar Perfil</h2>
+                <form action="submit" class="modal__forms">
+                    <input type="text" class="modal__forms__input" id="nombre" name="nombre" required placeholder="Nombre">
+                    <input type="text" class="modal__forms__input" id="acerca" name="acerca" required placeholder="Acerca de mi">
+                </form>
+                <button type="submit" class="modal__button">
+                    Guardar
+                </button>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+<script src="./index.js"></script>
+</body>
