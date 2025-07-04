@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
+    width: 282px;
+    background-color:#FFFFFF ;
 }
 
 
@@ -23,17 +25,24 @@
     font-weight: 900;
     align-items: center;
     justify-content: space-between;
-    background-color:#FFFFFF ;
     border-radius: 0 0 10px 10px;
     margin: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 282px;
+    
+    font-family: Inter;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
 }
 
 .element__container p{
     margin-left: 21px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 33px;
+    
 }
 
 
