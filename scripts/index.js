@@ -14,27 +14,33 @@ const botonAgregar=document.querySelector('.profile__addButton');
 const initialCards = [
   {
     name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+    description:"Imagen del Valle de Yosemite"
   },
   {
     name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+    description:"Imagen del Lago Louise"
   },
   {
     name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+    description:"Imagen de las montañas calvas"
   },
   {
     name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+    description:"Imagen de Latemar"
   },
   {
     name: "Parque Nacional de la Vanoise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+    description:"Imagen del Parque Nacional de la Vanoise"
   },
   {
     name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+    description:"Imagen del Lago di Braires"
   }
 ];
 
@@ -53,6 +59,7 @@ initialCards.forEach((tarjeta)=>{
     const tarjetaNueva= templateTarjeta.cloneNode(true);
     const imagenTarjeta=tarjetaNueva.querySelector('.element__image');
     imagenTarjeta.setAttribute('src', tarjeta.link)
+    imagenTarjeta.setAttribute('alt', tarjeta.description)
     const textoTarjeta=tarjetaNueva.querySelector(".element__container-text");
     const tituloTarjeta=tarjeta.name;
     textoTarjeta.textContent=tituloTarjeta;
@@ -127,7 +134,8 @@ botonesMegusta.forEach(function(boton) {
     boton.addEventListener('click', meGusta);
 });
 
-function cambiarColor(){
+
+function changeColor(){
    
     if(nombre.value.trim() !=="" && acerca.value.trim() !==""){
         botonGuardar.classList.add('modal__button__activo')
@@ -141,10 +149,10 @@ function cambiarColor(){
 
 
 
-nombre.addEventListener('input', cambiarColor)
-acerca.addEventListener('input',cambiarColor)
+nombre.addEventListener('input', changeColor)
+acerca.addEventListener('input', changeColor)
 
-function cambiarColorTarjeta(){
+function changeColorCard(){
    
     if(titulo.value.trim() !=="" && imagen.value.trim() !==""){
         botonTarjeta.classList.add('modal__button__activo')
@@ -156,8 +164,8 @@ function cambiarColorTarjeta(){
     }
 }
 
-titulo.addEventListener('input', cambiarColorTarjeta)
-imagen.addEventListener('input', cambiarColorTarjeta)
+titulo.addEventListener('input', changeColorCard)
+imagen.addEventListener('input', changeColorCard)
 
 function guardar(){
     let nombre=document.getElementById('nombre').value;
