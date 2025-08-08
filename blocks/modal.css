@@ -62,13 +62,14 @@
     opacity: 50%;
     border:none ;
     border-bottom: 1px solid;
-    
+    color: #000000;
 }
 
-.modal__input_type_error{
-    color:#FF0000;
+.modal__input-error{
+    color: #FF0000;;
     font-size: 12px;
     max-width: 316px;
+    border-color: #FF0000;
 }
 
 
@@ -99,7 +100,13 @@
     width: 358px;
     height: 50px;
     color: #C4C4C4;
+    background-color: black;
     margin-bottom: 36px;
+}
+
+.modal__button:hover{
+    cursor: pointer;
+    opacity: 80%;
 }
 
 .button__disabled{
