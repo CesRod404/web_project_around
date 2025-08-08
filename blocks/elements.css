@@ -3,6 +3,7 @@
     grid-template-columns: repeat(3,282px);
     grid-template-rows: repeat(2,361);
     grid-gap: 17px 20px;
+    font-family: 'Times New Roman', Times, serif;
     
 }
 .element__image{
@@ -51,7 +52,6 @@
     white-space: nowrap;
     overflow: hidden;
     
-    font-family: Inter;
     line-height: 100%;
     letter-spacing: 0%;
     
