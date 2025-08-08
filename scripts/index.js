@@ -135,37 +135,6 @@ botonesMegusta.forEach(function(boton) {
 });
 
 
-function changeColor(){
-   
-    if(nombre.value.trim() !=="" && acerca.value.trim() !==""){
-        botonGuardar.classList.add('modal__button__activo')
-        botonGuardar.disabled= false;
-    }else{
-        botonGuardar.classList.remove('modal__button__activo');
-        botonGuardar.disabled=true;
-        
-    }
-}
-
-
-
-nombre.addEventListener('input', changeColor)
-acerca.addEventListener('input', changeColor)
-
-function changeColorCard(){
-   
-    if(titulo.value.trim() !=="" && imagen.value.trim() !==""){
-        botonTarjeta.classList.add('modal__button__activo')
-        botonTarjeta.disabled= false;
-    }else{
-        botonTarjeta.classList.remove('modal__button__activo');
-        botonTarjeta.disabled=true;
-        
-    }
-}
-
-titulo.addEventListener('input', changeColorCard)
-imagen.addEventListener('input', changeColorCard)
 
 function guardar(){
     let nombre=document.getElementById('nombre').value;
@@ -182,8 +151,6 @@ function guardar(){
 
 
 
-
-
 function Abrirmodal(modalElegido){
     modalElegido.classList.add('modal__abierto');
 }
@@ -191,15 +158,14 @@ function Abrirmodal(modalElegido){
 
 function cerrarModal(modalElegido){
     modalElegido.classList.remove('modal__abierto')
+    
+
 }
-
-
 
 
 
 botonAgregar.addEventListener('click',()=> Abrirmodal(modalTarjeta))
 botonCerrarTarjeta.addEventListener('click', ()=>cerrarModal(modalTarjeta))
-
 
 
 botonEditar.addEventListener('click',()=> Abrirmodal(modal))
@@ -223,4 +189,27 @@ elementImg.forEach((elemento)=>{
 })
 
 botonCerrarImagen.addEventListener('click',()=>cerrarModal(modalImagen))
+
+
+const ExitModals=Array.from(document.querySelectorAll('.modal'));
+
+ExitModals.forEach((modalExit)=>{
+    modalExit.addEventListener('click', (evt)=>{
+        if(evt.target == modalExit){
+            cerrarModal(modalExit)
+        }
+    })
+})
+
+const cerrarEsc= (modales)=>{
+    document.addEventListener('keydown', (evt)=>{
+        if(evt.key == 'Escape'){
+            modales.forEach((ElementoModal)=>{
+                cerrarModal(ElementoModal)
+            })
+        }
+    })
+}
+
+cerrarEsc(ExitModals)
 
