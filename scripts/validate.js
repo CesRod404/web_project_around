@@ -1,10 +1,10 @@
 const config={
-    formSelector: ".popup__form",
-    inputSelector: ".popup__input",
-    submitButtonSelector: ".popup__button",
-    inactiveButtonClass: "popup__button_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible"
+    formSelector: ".modal__forms",
+    inputSelector: ".modal__form-input",
+    submitButtonSelector: ".modal__button",
+    inactiveButtonClass: "button__disabled",
+    inputErrorClass: "modal__input_type_error",
+    errorClass: "modal__error_visible"
 }
   
 

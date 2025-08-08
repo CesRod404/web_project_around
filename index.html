@@ -57,10 +57,10 @@
                     <h2>Editar Perfil</h2>
                     <form action="submit" class="modal__forms popup__form">
                         <div class="modal__forms__content">
-                            <input type="text" class="modal__form-input popup__input" id="nombre" name="nombre" required placeholder="Nombre" minlength=2 maxlength=40>
-                            <span class="nombre-error popup__input_type_error"></span>
-                            <input type="text" class="modal__form-input popup__input" id="acerca" name="acerca" required placeholder="Acerca de mi" minlength=2 maxlength=200>
-                            <span class="acerca-error popup__input_type_error"> </span>
+                            <input type="text" class="modal__form-input" id="nombre" name="nombre" required placeholder="Nombre" minlength=2 maxlength=40>
+                            <span class="nombre-error modal__input_type_error"></span>
+                            <input type="text" class="modal__form-input" id="acerca" name="acerca" required placeholder="Acerca de mi" minlength=2 maxlength=200>
+                            <span class="acerca-error modal__input_type_error"> </span>
 
                         </div>
                         <button type="submit" class="modal__button modal__button-guardar popup__button" id="modal__button-guardar" disabled>
@@ -76,14 +76,14 @@
                         <img src="./images/Close Icon.svg" alt="Botón de cerrar" class="modal__button-close-icon">
                     </button>
                     <h2>Nuevo lugar</h2>
-                    <form action="submit" class="modal__forms popup__form">
+                    <form action="submit" class="modal__forms">
                         <div class="modal__forms__content">
-                        <input type="text" class="modal__form-input popup__input" id="titulo" name="titulo" required placeholder="Titulo" minlength=2 maxlength=30>
-                        <span class="titulo-error popup__input_type_error "></span>
-                        <input type="url" class="modal__form-input popup__input" id="imagen" name="imagen" required placeholder="Enlace a la imagen">
-                        <span class="imagen-error popup__input_type_error">  </span>
+                        <input type="text" class="modal__form-input" id="titulo" name="titulo" required placeholder="Titulo" minlength=2 maxlength=30>
+                        <span class="titulo-error modal__input_type_error "></span>
+                        <input type="url" class="modal__form-input" id="imagen" name="imagen" required placeholder="Enlace a la imagen">
+                        <span class="imagen-error modal__input_type_error">  </span>
                         </div>
-                        <button type="submit" class="modal__button modal__button-tarjeta popup__button" id="modal__button-tarjeta" disabled>
+                        <button type="submit" class="modal__button modal__button-tarjeta" id="modal__button-tarjeta" disabled>
                             Crear
                         </button>
                     </form>

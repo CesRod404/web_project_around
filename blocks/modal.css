@@ -65,6 +65,12 @@
     
 }
 
+.modal__input_type_error{
+    color:#FF0000;
+    font-size: 12px;
+    max-width: 316px;
+}
+
 
 
 .modal__button-close{
@@ -94,6 +100,13 @@
     height: 50px;
     color: #C4C4C4;
     margin-bottom: 36px;
+}
+
+.button__disabled{
+    color: #C4C4C4;;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    opacity: 80%;
 }
 
 
