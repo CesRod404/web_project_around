@@ -3,7 +3,7 @@ const config={
     inputSelector: ".modal__form-input",
     submitButtonSelector: ".modal__button",
     inactiveButtonClass: "button__disabled",
-    inputErrorClass: "modal__input_type_error",
+    inputErrorClass: "modal__input-error",
     errorClass: "modal__error_visible"
 }
   

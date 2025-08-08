@@ -45,7 +45,7 @@
     align-items: center;
 }
 
-.modal__forms__content{
+.modal__forms-content{
     display: flex;
     flex-direction: column;
     gap: 12px;
