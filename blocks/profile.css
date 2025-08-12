@@ -28,17 +28,18 @@
     align-items: center;
     margin-bottom:16px;
     gap: 18px;
-    font-family: 'Times New Roman', Times, serif;
     
 }
 
 .profile__info-name{
     margin: 0;
     font-weight: 500;
+    font-family: "Inter", Arial, sans-serif;
     white-space: nowrap;
     font-size: 42px;
     line-height: 48px;
     letter-spacing: 0%;
+
 
   
 }
