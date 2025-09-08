@@ -1,15 +1,14 @@
 
 
-//Modales
-export let modalImagen=document.querySelector('#modal-imagen')
-export let botonCerrarImagen=document.querySelector('#modal__button-imagen');
+
 
 export class Card {
-    constructor(data, cardSelector){
+    constructor(data, cardSelector,handleCardClick){
         this._cardSelector=cardSelector;
         this._name=data.name;
         this._link=data.link;
         this._description=data.description;
+        this._handleCardClick=handleCardClick;
     }
 
     _getTemplate(){
@@ -22,16 +21,8 @@ export class Card {
         this._element.remove()
     }
 
-    _handleOpenModal(){
-        modalImagen.querySelector('.modal__imagen').src=this._link;
-        modalImagen.querySelector('.modal__texto').textContent=this._name
-        modalImagen.classList.add('modal__abierto');
-    }
 
-    _handleCloseModal(){
-        modalImagen.querySelector('.modal__imagen').src="";
-        modalImagen.classList.remove('modal__abierto')
-    }
+    
 
     _handleLike(){
         let estaActivo = this._botonLike.classList.toggle('activo');
@@ -48,12 +39,9 @@ export class Card {
         this._botonLike = this._element.querySelector('.element__container-like-img');
 
         this._element.querySelector('.element__image').addEventListener('click', ()=>{
-            this._handleOpenModal();
+            this._handleCardClick();
         });
 
-        botonCerrarImagen.addEventListener('click',()=>{
-            this._handleCloseModal();
-        })
 
         this._element.querySelector('.element__delete-button').addEventListener('click', ()=>{
             this._deleteElement();

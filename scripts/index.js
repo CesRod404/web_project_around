@@ -1,6 +1,11 @@
 import * as CardClass from './Card.js'
 import {FormValidator as FormClass} from './FormValidator.js'
-import { contenedorTarjeta } from './utils.js';
+import PopupWithImage from './PopupWithImage.js';
+import Section from './Section.js';
+import PopupWithForm from './PopupWithForm.js';
+import { guardar, agregarTarjeta } from './utils.js';
+import UserInfo from './UserInfo.js';
+
 
 
 const initialCard = [
@@ -46,14 +51,25 @@ const config={
 }
 
 
+const handleCardClick=(link,name)=>{
+  const popup= new PopupWithImage('#modal-imagen',link,name);
+  popup.open();
+  
+}
+
+
+const usuario=new UserInfo('.profile__info-name',".profile__info-subtitle");
+
 
 
 //Tarjetas iniciales
-initialCard.forEach((tarjeta)=>{
-    const card= new CardClass.Card(tarjeta,".tarjeta-template")
-    const cardElement= card.generateCard();
-    contenedorTarjeta.append(cardElement);
-})
+const sectionCards=new Section({data:initialCard, renderer:(tarjeta)=>{
+  const card= new CardClass.Card(tarjeta,".tarjeta-template",()=>handleCardClick(tarjeta.link,tarjeta.name))
+  const cardElement= card.generateCard();
+  sectionCards.setItem(cardElement);
+}},'.elements');
+
+sectionCards.renderItems()
 
 
 //Creacion de validadores de formulario
@@ -66,3 +82,18 @@ const formTarjeta= document.querySelector('.modal__form-tarjeta')
 const formularioTarjetaValidador= new FormClass(config, formTarjeta);
 
 formularioTarjetaValidador.enableValidation()
+
+//Creacioin popups
+
+///Popup para cambiar nombre
+const popupNombre= new PopupWithForm('#modal-edicion',()=>guardar(usuario));
+//Boton para cambiar nombre
+let botonEditar=document.querySelector('.profile__info-button');
+botonEditar.addEventListener('click',()=> popupNombre.open());
+
+
+//Popup para agregar tarjetas
+const popupTarjeta= new PopupWithForm('#modal-tarjeta',agregarTarjeta);
+///Boton para agregar tarjeta
+const botonAgregar=document.querySelector('.profile__addButton');
+botonAgregar.addEventListener('click',()=> popupTarjeta.open())
