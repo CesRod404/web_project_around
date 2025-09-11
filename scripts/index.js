@@ -3,7 +3,7 @@ import {FormValidator as FormClass} from './FormValidator.js'
 import PopupWithImage from './PopupWithImage.js';
 import Section from './Section.js';
 import PopupWithForm from './PopupWithForm.js';
-import { guardar, agregarTarjeta } from './utils.js';
+import { agregarTarjeta } from './utils.js';
 import UserInfo from './UserInfo.js';
 
 
@@ -54,11 +54,11 @@ const config={
 const handleCardClick=(link,name)=>{
   const popup= new PopupWithImage('#modal-imagen',link,name);
   popup.open();
+  popup.setEventListeners();
   
 }
 
 
-const usuario=new UserInfo('.profile__info-name',".profile__info-subtitle");
 
 
 
@@ -83,10 +83,24 @@ const formularioTarjetaValidador= new FormClass(config, formTarjeta);
 
 formularioTarjetaValidador.enableValidation()
 
-//Creacioin popups
+
+
+
+
+//Creacion popups
+
+
+
+///instancia usuario
+const usuario=new UserInfo('.profile__info-name',".profile__info-subtitle");
+
 
 ///Popup para cambiar nombre
-const popupNombre= new PopupWithForm('#modal-edicion',()=>guardar(usuario));
+const popupNombre= new PopupWithForm('#modal-edicion',(data)=>{
+  usuario.setUserInfo(data.nombre, data.acerca)
+});
+
+popupNombre.setEventListeners();
 //Boton para cambiar nombre
 let botonEditar=document.querySelector('.profile__info-button');
 botonEditar.addEventListener('click',()=> popupNombre.open());
@@ -94,6 +108,8 @@ botonEditar.addEventListener('click',()=> popupNombre.open());
 
 //Popup para agregar tarjetas
 const popupTarjeta= new PopupWithForm('#modal-tarjeta',agregarTarjeta);
+
+popupTarjeta.setEventListeners();
 ///Boton para agregar tarjeta
 const botonAgregar=document.querySelector('.profile__addButton');
 botonAgregar.addEventListener('click',()=> popupTarjeta.open())

@@ -6,14 +6,6 @@ import * as CardClass from './Card.js'
 export const contenedorTarjeta= document.querySelector('.elements');
 
 
-export function guardar(usuario){
-    const popup = document.querySelector('#modal-edicion');
-    const nombre = popup.querySelector('#nombre').value;
-    const acercaDe = popup.querySelector('#acerca').value;
-
-    usuario.setUserInfo(nombre,acercaDe);
-
-}
 
 
 export function agregarTarjeta(){

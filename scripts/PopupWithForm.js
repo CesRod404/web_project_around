@@ -6,16 +6,21 @@ export default class PopupWithForm extends Popup{
         this._callBack=callBackFunction;
     }
 
-    _getInputValues(){
-        const inputList= Array.from(this._popupContainer.querySelectorAll('.modal__form-input'));
-        return inputList;
+    _getInputValues() {
+        const inputList = Array.from(this._popupContainer.querySelectorAll('.modal__form-input'));
+        const formValues = {};
+        inputList.forEach(input => {
+            formValues[input.name] = input.value;
+        });
+        return formValues;
     }
+
 
     setEventListeners(){
         super.setEventListeners();
         this._popupContainer.querySelector('.modal__forms').addEventListener('submit', (evt)=>{
             evt.preventDefault();
-            this._callBack();
+            this._callBack(this._getInputValues());
             this.close();
         })
     }
@@ -23,5 +28,7 @@ export default class PopupWithForm extends Popup{
     close(){
         super.close();
         this._popupContainer.querySelector('.modal__forms').reset();
+
+
     }
 }

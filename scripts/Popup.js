@@ -14,7 +14,6 @@ export default class Popup{
     open(){
         this._popupContainer.classList.add('modal__abierto');
         this._handleEscClose();
-        this.setEventListeners();
     }
 
     close(){
