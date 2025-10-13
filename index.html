@@ -7,7 +7,7 @@
         <meta name="author" content="Cesar Rodriguez" />
         <meta name="keywords" content="HTML, CSS, JS" />
 
-        <link rel="stylesheet" href="pages/index.css">
+        <link rel="stylesheet" href="page/index.css">
         <title>Project Around</title>
     </head>
 
@@ -20,18 +20,20 @@
             <hr>
             <main class="content">
                 <section class="profile">
-                    <img src="./images/avatar.jpg" alt="" class="profile__avatar">
+                    <button class="profile__avatar-button" >
+                        <img src="" alt="" class="profile__avatar">
+                    </button>
                     <div class="profile__info">
                         <div class="profile__info-title">
                             <h1 class="profile__info-name">
-                                Jacques Cousteau
+                                
                             </h1>
                             <button  class="profile__info-button boton-modal">
                                 <img src="./images/BotonEditar.svg" alt="Lapiz de edición">
                             </button>
                         </div>
                         <p class="profile__info-subtitle">
-                            Explorador
+                            
                         </p>
                     </div>
                 <button class="profile__addButton boton-modal">
@@ -89,18 +91,49 @@
                     </form>
                 </div>
             </div>
-
+                
 
             <div class="modal " id="modal-imagen">
                     <div class="modal__imagen-contenedor">
                         <button class="modal__button-close modal__button-close-img" id="modal__button-imagen">
                             <img src="./images/Close Icon.svg" alt="Botón de cerrar" class="modal__button-close-icon">
                         </button>
-                        <img class="modal__imagen" src=" " alt=" ">
+                        <img class="modal__imagen" src="" alt=" ">
                         <p class="modal__texto"></p>
                     </div>
             </div>
 
+            <div class="modal" id="modal-ad">
+                <div class="modal__ad-contenedor">
+                    <button class="modal__button-close modal__button-close-img" id="modal__button-close-ad">
+                        <img src="./images/Close Icon.svg" alt="Botón de cerrar" class="modal__button-close-icon">
+                    </button>
+                    <div class="modal__ad-contenido">
+                            <p>¿Estás seguro?</p>
+                            <button  class="modal_button modal__button-ad">
+                                Sí
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="modal" id="modal-foto" data-modal="foto">
+                <div class="modal__form modal__form-avatar">
+                    <button class="modal__button-close">
+                        <img src="./images/Close Icon.svg" alt="Botón de cerrar" class="modal__button-close-icon">
+                    </button>
+                    <h2>Cambiar foto de perfil</h2>
+                    <form action="submit" class="modal__forms">
+                        <div class="modal__forms-content">
+                            <input type="url" class="modal__form-input" id="avatar" name="avatar" required placeholder="Url" >
+                            <span class="avatar-error modal__input-error"></span>
+                        </div>
+                        <button type="submit" class="modal__button modal__button-guardar" id="modal__button-guardar" disabled>
+                            Guardar
+                        </button>
+                    </form>
+                </div>
+            </div>
 
 
 
@@ -120,5 +153,7 @@
         </div>   
     </template>
 </body>
-<script type="module" src="./scripts/index.js" defer></script>
+<script type="module" src="./page/index.js" defer></script>
 </html>
+
+

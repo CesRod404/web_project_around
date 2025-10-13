@@ -8,8 +8,8 @@ export default class PopupWithImage extends Popup{
     }
 
     open(){
-        this._popupContainer.querySelector('.modal__imagen').src=this._containerLink;
-        this._popupContainer.querySelector('.modal__texto').textContent=this._containerName;
+        document.querySelector('.modal__imagen').src=this._containerLink;
+        document.querySelector('.modal__texto').textContent=this._containerName;
         super.open();
         
     }

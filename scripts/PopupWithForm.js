@@ -15,13 +15,28 @@ export default class PopupWithForm extends Popup{
         return formValues;
     }
 
+    setLoading(isLoading, defaultText = "Guardar") {
+        const submitButton = this._popupContainer.querySelector('.modal__button');
+        if (isLoading) {
+            submitButton.textContent = "Cargando...";
+        } else {
+            submitButton.textContent = defaultText;
+        }
+    }
+
+
 
     setEventListeners(){
         super.setEventListeners();
         this._popupContainer.querySelector('.modal__forms').addEventListener('submit', (evt)=>{
             evt.preventDefault();
-            this._callBack(this._getInputValues());
-            this.close();
+            const result =this._callBack(this._getInputValues());
+            if(result instanceof Promise){
+                result.then(()=> this.close())
+                .catch(err => console.error("error en sumbmit",err))
+            }else{
+                this.close();
+            }
         })
     }
 

@@ -1,14 +1,16 @@
 
 
-
-
 export class Card {
-    constructor(data, cardSelector,handleCardClick){
+    constructor(data, cardSelector,handleCardClick,popupConfirm,api){
         this._cardSelector=cardSelector;
         this._name=data.name;
         this._link=data.link;
+        this._idCard=data._id;
+        this._isLiked=data.isLiked;
         this._description=data.description;
         this._handleCardClick=handleCardClick;
+        this._popupConfirm=popupConfirm;
+        this._api= api;
     }
 
     _getTemplate(){
@@ -18,20 +20,62 @@ export class Card {
     }
 
     _deleteElement(){
+
         this._element.remove()
     }
 
 
+    getID(){
+        return this._idCard;
+    }
     
+    getLike(){
+        return this._isLiked;
+    }
 
-    _handleLike(){
-        let estaActivo = this._botonLike.classList.toggle('activo');
-        if (estaActivo) {
-            this._botonLike.src = './images/MegustaActivo.svg';
+
+    
+    _handleLike() {
+        const estaActivo = this._botonLike.classList.contains('activo');
+
+        if (!estaActivo) {
+            // Dar like
+            this._api.putLike(this._idCard)
+            .then(data => {
+                data._isLiked = true;
+                this._botonLike.classList.add('activo');
+                this._botonLike.src = './images/MegustaActivo.svg';
+            })
+            .catch(err => console.error("Error al dar like:", err));
         } else {
-            this._botonLike.src = './images/MeGusta.svg';
+            // Quitar like
+            this._api.deleteLike(this._idCard)
+            .then(data => {
+                data._isLiked = false;
+                this._botonLike.classList.remove('activo');
+                this._botonLike.src = './images/MeGusta.svg';
+            })
+            .catch(err => console.error("Error al quitar like:", err));
         }
     }
+
+
+
+        
+    
+
+    _handleDeleteClick() {
+    this._popupConfirm.open(() => {
+        this._api.deleteCard(this._idCard)
+        .then(()=>{
+            this._deleteElement();
+        })
+        
+    });
+}
+
+
+
 
 
 
@@ -44,11 +88,12 @@ export class Card {
 
 
         this._element.querySelector('.element__delete-button').addEventListener('click', ()=>{
-            this._deleteElement();
+            this._handleDeleteClick();
         })
         
         this._botonLike.addEventListener('click', ()=>{
             this._handleLike();
+            
         })
         
   
@@ -62,6 +107,16 @@ export class Card {
         this._element.querySelector('.element__image').src=this._link;
         this._element.querySelector('.element__image').alt=this._description;
         this._element.querySelector('.element__container-text').textContent=this._name;
+
+        this._botonLike = this._element.querySelector('.element__container-like-img');
+        if (this._isLiked) {
+            this._botonLike.classList.add('activo');
+            this._botonLike.src = './images/MegustaActivo.svg';
+        } else {
+            this._botonLike.classList.remove('activo');
+            this._botonLike.src = './images/MeGusta.svg';
+        }
+
 
         return this._element;
             
