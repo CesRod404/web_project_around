@@ -1,7 +1,6 @@
 # Tripleten web_project_around
-Pagina responsiva e interactiva implementando el uso de JS y sus promesas haciendo conexion con una Api
-Modifica el nombre
-Añade imagenes
-cambia el avatar
+página web dinámica que muestra imágenes y títulos obtenidos desde una API, que resultó en una interfaz interactiva y actualizada en tiempo real, usando JavaScript, HTML y CSS
+
 
 PAGINA
+https://cesrod404.github.io/web_project_around/
