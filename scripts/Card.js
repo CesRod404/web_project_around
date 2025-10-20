@@ -22,6 +22,8 @@ export class Card {
     _deleteElement(){
 
         this._element.remove()
+        this._element = null;
+
     }
 
 
@@ -42,18 +44,18 @@ export class Card {
             // Dar like
             this._api.putLike(this._idCard)
             .then(data => {
-                data._isLiked = true;
+                this._isLiked = true;
                 this._botonLike.classList.add('activo');
-                this._botonLike.src = './images/MegustaActivo.svg';
+                this._botonLike.src = 'images/meGustaActivo.svg';
             })
             .catch(err => console.error("Error al dar like:", err));
         } else {
             // Quitar like
             this._api.deleteLike(this._idCard)
             .then(data => {
-                data._isLiked = false;
+                this._isLiked = false;
                 this._botonLike.classList.remove('activo');
-                this._botonLike.src = './images/MeGusta.svg';
+                this._botonLike.src = 'images/meGusta.svg';
             })
             .catch(err => console.error("Error al quitar like:", err));
         }
@@ -111,10 +113,10 @@ export class Card {
         this._botonLike = this._element.querySelector('.element__container-like-img');
         if (this._isLiked) {
             this._botonLike.classList.add('activo');
-            this._botonLike.src = './images/MegustaActivo.svg';
+            this._botonLike.src = 'images/meGustaActivo.svg';
         } else {
             this._botonLike.classList.remove('activo');
-            this._botonLike.src = './images/MeGusta.svg';
+            this._botonLike.src = 'images/MeGusta.svg';
         }
 
 
