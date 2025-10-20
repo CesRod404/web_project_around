@@ -4,6 +4,7 @@ import * as CardClass from './Card.js'
 import Api  from './Api.js';
 
 import PopupWithConfirmation from './PopupWithConfirmation.js';
+import PopupWithImage from './PopupWithImage.js';
 
 export const contenedorTarjeta= document.querySelector('.elements');
 
@@ -43,3 +44,10 @@ export function borrarTarjeta(id){
 }
 
 
+
+
+function handleCardClick(link, name) {
+  const popup = new PopupWithImage('#modal-imagen', link, name);
+  popup.open();
+  popup.setEventListeners();
+}
