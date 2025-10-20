@@ -55,7 +55,7 @@ export class Card {
             .then(data => {
                 this._isLiked = false;
                 this._botonLike.classList.remove('activo');
-                this._botonLike.src = 'images/meGusta.svg';
+                this._botonLike.src = 'images/MeGusta.svg';
             })
             .catch(err => console.error("Error al quitar like:", err));
         }
@@ -117,7 +117,7 @@ export class Card {
         } else {
             this._botonLike.classList.remove('activo');
             this._botonLike.src = 'images/MeGusta.svg';
-            
+
         }
 
 
