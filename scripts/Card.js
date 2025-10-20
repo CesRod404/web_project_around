@@ -117,6 +117,7 @@ export class Card {
         } else {
             this._botonLike.classList.remove('activo');
             this._botonLike.src = 'images/MeGusta.svg';
+            
         }
 
 
